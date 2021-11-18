@@ -4,24 +4,43 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Vector3 targetPosition;
-    public Vector3 buildingPosition; 
+    public Transform vrPlayer;
+
+    public float lookDownAngle = 25.0f;
+    
+    public float speed = 3.0f;
+
+    public bool moveForward;
+
+    private CharacterController cc;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        // Initialising (setting) the initial coordinates of the target position to be the same as the Players starting position
-        targetPosition = this.transform.position; 
+        cc = GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
+        if (vrPlayer.eulerAngles.x >= lookDownAngle && vrPlayer.eulerAngles.x < 90.0f) {
+            moveForward = true;
+        }
+        else {
+            moveForward = false;
+        }
+
+        if (moveForward == true) {
+            Vector3 forward = vrPlayer.TransformDirection(Vector3.forward);
+
+            cc.SimpleMove(forward * speed); 
+
+        }
+
     }
 
-    public void EnteredBuilding() {
-        targetPosition = buildingPosition; 
-    }
+    
 
 }
