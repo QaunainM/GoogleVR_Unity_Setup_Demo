@@ -5,10 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 
-    private Vector3 targetPosition;
-
-    public Vector3 loweredPosition;
-    private Vector3 closedPosition; 
+    private Vector3 targetPosition;             // Varaible that will hold the position the Door can be set to throughout the game
+    public Vector3 loweredPosition;             // Variable that holds the position of the Doors open state (loweredPosition)
+    private Vector3 closedPosition;             // Variable that holds the position of the Doors closed state (closedPosition)
 
     public float speed = 1.5f;
 
@@ -16,18 +15,15 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Set the private variable (targetPosition) to the doors actual starting position which is Transform.position
-        targetPosition = transform.position;
+        targetPosition = transform.position;        // Set the targetPosition to the doors actual starting position which is this.transform.position
 
-        // Declare the closed position as the initial target position
-        closedPosition = targetPosition;  
-
+        closedPosition = targetPosition;            // Declare the closed position as the initial target position as the game starts with the doors in a closed state
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Animation using LEPR to move the doors current position to the target position 
+        // Animation using LERP to move the doors current position to the target position 
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * speed);
     }
 
@@ -38,7 +34,6 @@ public class Door : MonoBehaviour
 
 
     // Custom method to change the doors target position to the closed position
-
     public void CloseDoor() {
         targetPosition = closedPosition;
     }
