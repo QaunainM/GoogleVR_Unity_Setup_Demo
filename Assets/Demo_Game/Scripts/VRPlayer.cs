@@ -5,7 +5,7 @@ using UnityEngine;
 public class VRPlayer : MonoBehaviour
 {
 
-    public Player player;   // Import the script attached to the Player obhect (parent of this VR Player)
+    public Player player;   // Import the script attached to the Player obhect (parent of this VR Player) 
 
     // Start is called before the first frame update
     void Start()

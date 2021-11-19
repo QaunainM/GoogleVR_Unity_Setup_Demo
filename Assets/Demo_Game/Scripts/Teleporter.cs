@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    public GameObject player;                   // Import the Player (parent of the VRPlayer) GameObject 
+    public GameObject player;                   // Import the Player (parent of the VRPlayer) GameObject  
     
     // Start is called before the first frame update
     void Start()

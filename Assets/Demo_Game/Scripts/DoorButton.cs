@@ -26,7 +26,7 @@ public class DoorButton : MonoBehaviour
 
     // Custom method for when the Exit button is being looked at
     public void LookAtExit() {
-        door.CloseDoor();               // Tells it to jump to a method called CloseDoor() inside the Door's script
+        door.CloseDoor();               // Tells it to jump to a method called CloseDoor() inside the Door's script 
     }
 
 

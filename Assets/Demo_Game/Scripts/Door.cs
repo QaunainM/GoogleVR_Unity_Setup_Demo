@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 
-    private Vector3 targetPosition;             // Varaible that will hold the position the Door can be set to throughout the game
+    private Vector3 targetPosition;             // Varaible that will hold the position the Door can be set to throughout the game 
     public Vector3 loweredPosition;             // Variable that holds the position of the Doors open state (loweredPosition)
     private Vector3 closedPosition;             // Variable that holds the position of the Doors closed state (closedPosition)
 
